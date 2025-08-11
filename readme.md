@@ -13,8 +13,8 @@ This is a simple Express.js server that generates PDF documents from order data 
 ## Installation
 
 ```bash
-git clone <repo-url>
-cd <repo-directory>
+git clone https://github.com/zeonbf/so-po-pdf-server.git
+cd so-po-pdf-server
 npm install
 npm start
 ```
