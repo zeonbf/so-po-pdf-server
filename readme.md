@@ -73,3 +73,23 @@ order (object): Order details to include in the PDF.
 pageSize (string, optional): PDF page size (default "Letter").
 
 orderType (string, optional): Document title (default "Sales Order").
+
+### Response
+
+- **Content-Type:** `application/pdf`
+- **Content-Disposition:** `attachment; filename="{order.id}.pdf"`
+
+The API responds with the generated PDF file of the sales order invoice. The PDF is sent as a binary stream in the HTTP response body.
+
+- The `Content-Type` header specifies that the response is a PDF document.
+- The `Content-Disposition` header is set to `attachment` with a filename based on the order's ID, so browsers and clients will treat it as a downloadable file named like `ORD-123456.pdf`.
+
+#### How to Handle the Response
+
+- **In a browser:**  
+  The PDF will be downloaded automatically using the filename specified.
+
+- **In a mobile app or programmatic client:**
+  - The response body contains the raw PDF binary data.
+  - Save this binary data as a `.pdf` file locally, using the filename from the `Content-Disposition` header or based on the order ID you sent in the request.
+  - Open or share the saved PDF file as needed.
